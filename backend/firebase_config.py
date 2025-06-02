@@ -5,4 +5,9 @@ cred = credentials.Certificate(r"C:\Users\merci\WebstormProjects\CropAssistant\c
 app = firebase_admin.initialize_app(cred)
 
 db = firestore.client(app)
-print(db)
+location = db.collection("location")
+location.add({
+    "latitude":"23",
+    "longitude":"36"
+})
+print(location.count())
